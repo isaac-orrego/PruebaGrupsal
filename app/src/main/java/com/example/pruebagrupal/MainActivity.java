@@ -1,5 +1,7 @@
 package com.example.pruebagrupal;
 
+//Angel Zamorano; Isaac Orrego: Rodolfo Parada; Carolina Diaz;//
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
