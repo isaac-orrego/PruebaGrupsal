@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PruebaGrupal">
-        <activity android:name=".DetalleTecito"></activity>
+        <activity android:name=".DetalleVerde"></activity>
+        <activity android:name=".DetalleAmarillo" />
+        <activity android:name=".DetalleRojo" />
+        <activity android:name=".DetalleTecito" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

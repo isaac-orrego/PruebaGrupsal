@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements Adaptertecito.Ite
     ImageView imageView;
     TextView textView;
     TextView textView1;
-    private ArrayList<Tecito> listaproductos;
+    ArrayList lasNotas;
+
     Adaptertecito adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +37,23 @@ public class MainActivity extends AppCompatActivity implements Adaptertecito.Ite
 
         NotaLab instancia = NotaLab.get(this);
 
-        instancia.addNota(new Nota("99","wwwwwww"));
-
-        ArrayList<Tecito> losTes = new ArrayList<>();
-        losTes.add(new Tecito(instancia.getNota("99").getMensaje(),R.drawable.a1,"peazo de te" ));
-        losTes.add(new Tecito("Te Rojo",R.drawable.a2,"peazo de te"));
-        losTes.add(new Tecito("Te Amarillo",R.drawable.a3,"peazo de te"));
-        losTes.add(new Tecito("Te Negro",R.drawable.a5,"peazo de te"));
+        instancia.addNota(new Nota("111", "Te Verde", "Un Terrible peazo de te", R.drawable.a1));
+        instancia.addNota(new Nota("222", "Te Amarillo", "Un Terrible peazo de te", R.drawable.a3));
+        instancia.addNota(new Nota("333", "Te Rojo", "Un Terrible peazo de te", R.drawable.a2));
+        instancia.addNota(new Nota("444", "Te Negro", "Un Terrible peazo de te", R.drawable.a5));
 
 
+        lasNotas = new ArrayList();
 
-
-
-
-
+        lasNotas.add(instancia.getNota("111"));
+        lasNotas.add(instancia.getNota("222"));
+        lasNotas.add(instancia.getNota("333"));
+        lasNotas.add(instancia.getNota("444"));
 
 
         RecyclerView recyclerView = findViewById(R.id.rvtecito);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new Adaptertecito(this, losTes);
+        adapter = new Adaptertecito(this, lasNotas);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
@@ -65,11 +64,32 @@ public class MainActivity extends AppCompatActivity implements Adaptertecito.Ite
 
 
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, int position)  {
 
-        Intent i = new Intent(MainActivity.this, DetalleTecito.class);
-        i.putExtra("posicion", String.valueOf(position));
-        startActivity(i);
+        switch (position){
+
+            case 0:
+                Intent intent = new Intent(this,DetalleVerde.class);
+                startActivity(intent);
+                break;
+            case 1:
+                Intent intent1 = new Intent(this,DetalleRojo.class);
+                startActivity(intent1);
+                break;
+            case 2:
+                Intent intent2 = new Intent(this,DetalleAmarillo.class);
+                startActivity(intent2);
+                break;
+            case 3:
+                Intent intent3 = new Intent(this,DetalleTecito.class);
+                startActivity(intent3);
+                break;
+            default:
+                Toast.makeText(this, "no hay mas tes", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+
 
 
     }

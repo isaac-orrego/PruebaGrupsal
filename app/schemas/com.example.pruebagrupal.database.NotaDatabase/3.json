@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "45c87a95d452e0381c2957ad388f005b",
+    "version": 3,
+    "identityHash": "99ec3b090ecffc65bf80e54051ef53d8",
     "entities": [
       {
         "tableName": "nota",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `contenido` TEXT, `descripcion` TEXT, `foto` INTEGER NOT NULL, PRIMARY KEY(`mId`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mId` TEXT NOT NULL, `contenido` TEXT, `foto` INTEGER NOT NULL, `Descripcion` TEXT, PRIMARY KEY(`mId`))",
         "fields": [
           {
             "fieldPath": "mId",
@@ -15,14 +15,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "nombre",
+            "fieldPath": "Nombre",
             "columnName": "contenido",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "descripcion",
-            "columnName": "descripcion",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -31,6 +25,12 @@
             "columnName": "foto",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "Descripcion",
+            "columnName": "Descripcion",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -45,7 +45,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"45c87a95d452e0381c2957ad388f005b\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"99ec3b090ecffc65bf80e54051ef53d8\")"
     ]
   }
 }

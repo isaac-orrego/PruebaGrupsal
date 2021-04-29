@@ -9,7 +9,7 @@ import com.example.pruebagrupal.Nota;
 
 import java.util.List;
 
-public class NotaLab {
+ public class NotaLab {
     @SuppressLint("StaticFieldLeak")
     private static NotaLab sNotaLab;
 

@@ -11,20 +11,12 @@ public class Nota {
     @NonNull
     private String mId;
     @ColumnInfo(name = "contenido")
-    private String mMensaje;
+    private String nombre;
+    private String descripcion;
+    private int foto;
 
-  public Nota() {
+    public Nota() {
         mId = UUID.randomUUID().toString();
-  }
-
-    public Nota(@NonNull String mId, String mMensaje) {
-        this.mId = mId;
-        this.mMensaje = mMensaje;
-    }
-
-    public Nota(@NonNull String mMensaje) {
-
-        this.mMensaje = mMensaje;
     }
 
     @NonNull
@@ -36,11 +28,38 @@ public class Nota {
         mId = id;
     }
 
-    public String getMensaje() {
-        return mMensaje;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setMensaje(String mensaje) {
-        mMensaje = mensaje;
+    public void setMensaje(String nombre) {
+        nombre = nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    public Nota(@NonNull String mId, String nombre, String descripcion, int foto) {
+        this.mId = mId;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.foto = foto;
     }
 }

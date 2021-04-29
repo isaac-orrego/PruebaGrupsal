@@ -8,4 +8,5 @@ import com.example.pruebagrupal.Nota;
 @Database(entities = {Nota.class}, version = 1)
 public abstract class NotaDatabase extends RoomDatabase {
     public abstract NotaDao getNotaDao();
+
 }

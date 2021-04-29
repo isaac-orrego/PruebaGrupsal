@@ -18,13 +18,13 @@ import java.util.List;
 
 public class Adaptertecito extends RecyclerView.Adapter<Adaptertecito.ViewHolder> {
 
-    private List<Tecito> mData;
+    private List<Nota> mData;
     private LayoutInflater mInflater;
     private Context context;
     private ItemClickListener mClickListener;
 
 
-    Adaptertecito(Context context, List<Tecito> data) {
+    Adaptertecito(Context context, List<Nota> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
     }
@@ -40,7 +40,7 @@ public class Adaptertecito extends RecyclerView.Adapter<Adaptertecito.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Tecito tecito = mData.get(position);
+        Nota tecito = mData.get(position);
 
         holder.nombre.setText(mData.get(position).getNombre());
 
